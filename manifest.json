@@ -1,0 +1,16 @@
+{
+  "short_name": "UnagiFinance",
+  "name": "UnagiSwap Finance",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "160x160",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "portrait",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
