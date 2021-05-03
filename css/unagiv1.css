@@ -1,0 +1,479 @@
+@import url('fonts.css');
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 103px;
+}
+
+body {
+  position: relative;
+  font-family: 'D-DIN';
+}
+
+.font-pixel {
+  font-family: 'Pixeled' !important;
+}
+
+.text-orange {
+  color: #C66632 !important;
+}
+
+.text-orange1 {
+  color: #BA5211 !important;
+}
+
+.text-lightorange {
+  color: #EDDCBE !important;
+}
+
+.text-grey {
+  color: #686B6C !important;
+}
+
+.text-darkgrey {
+  color: #46515A !important;
+}
+
+.text-yellow {
+  color: #FFE700 !important;
+}
+
+.bg-orange {
+  background-color: #AA460E !important;
+}
+
+.bg-lightyellow {
+  background-color: #EFE3CE !important;
+}
+
+.bg-dark {
+  background-color: #2F2B3F !important;
+}
+
+.navbar .nav-link {
+  font-size: .7rem;
+  color: #000;
+}
+
+.navbar .navbar-toggler {
+  border: 1px solid #AA460E;
+  background-color: #AA460E;
+}
+
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-justify' viewBox='0 0 16 16'%3e%3cpath fill-rule='evenodd' d='M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z'/%3e%3c/svg%3e");
+}
+
+.cover {
+  padding-top: 152.4px;
+}
+
+.cover h4 {
+  font-size: 1.2rem;
+}
+
+.cover p {
+  font-size: 1.4rem;
+}
+
+.cover .cloud {
+  top: -180px;
+  margin-bottom: -200px;
+  z-index: -99;
+}
+
+.cover .cloud img {
+  width: 300px;
+}
+
+.feature .card {
+  border-radius: 1rem;
+  border: none;
+}
+
+.feature h3 {
+  font-size: .65rem;
+}
+
+.feature h2 {
+  font-size: 1rem;
+}
+
+.feature p {
+  font-size: 1.4rem;
+}
+
+.feature h4 {
+  font-size: 1.8rem;
+}
+
+.promise {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.promise h3 {
+  font-size: 1.4rem;
+}
+
+.promise p {
+  font-size: 1.2rem;
+}
+
+.promise .card {
+  border-radius: 5px;
+  border: none;
+}
+
+.promise .card .card-img {
+  width: 50%;
+}
+
+.promise .card h5 {
+  font-size: .8rem;
+}
+
+.promise .card p {
+  font-size: 1rem;
+}
+
+.tutorial {
+  padding-top: 152.4px;
+}
+
+.tokenomic h3,
+.roadmap h3,
+.faq h3,
+.team h3,
+.tutorial h3 {
+  font-size: 1.3rem;
+}
+
+.tokenomic h4,
+.tutorial h4 {
+  font-size: 1.8rem;
+}
+
+.tokenomic p,
+.tutorial p {
+  font-size: 1.5rem;
+  width: 520px;
+}
+
+.margbtm {
+  margin-bottom: 5rem;
+}
+
+.tokenomic .cloudbg img {
+  position: relative;
+  width: 600px;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: -300px;
+  z-index: -99;
+}
+
+.tutorial .cloudbg img {
+  position: relative;
+  width: 600px;
+  top: -240px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: -240px;
+  z-index: -99;
+}
+
+.roadmap card {
+  border-radius: 5px;
+}
+
+.roadmap h4 {
+  font-size: .6rem;
+}
+
+.roadmap p {
+  font-size: .95rem;
+}
+
+.faq .card {
+  box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.05);
+  border: 0;
+  border-radius: 5px;
+}
+
+.faq .accordion-item {
+  border: 1px solid #CACFE6;
+  border-left: none;
+  border-right: none;
+}
+
+.faq .accordion-item:first-of-type {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.faq .accordion-item:last-of-type {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.faq .accordion-button {
+  font-size: .75rem;
+}
+
+.faq .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ba5211'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.faq .accordion-button:not(.collapsed) {
+  color: #000;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.faq .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ba5211'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.faq .accordion-body p {
+  font-size: 1rem;
+}
+
+.team .community img {
+  width: 700px;
+}
+
+.support h3 {
+  font-size: 1.2rem;
+}
+
+.btn-circle {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.btn-circle i {
+  position: relative;
+  top: -1px;
+}
+
+.btn-orange {
+  color: #BA5211;
+  border-color: #BA5211;
+}
+
+.btn-orange:hover {
+  color: #fff;
+  background-color: #BA5211;
+  border-color: #BA5211;
+}
+
+.btn-check:focus+.btn-orange,
+.btn-orange:focus {
+  box-shadow: none;
+}
+
+.btn-check:checked+.btn-orange,
+.btn-check:active+.btn-orange,
+.btn-orange:active,
+.btn-orange.active,
+.btn-orange.dropdown-toggle.show {
+  color: #fff;
+  background-color: #BA5211;
+  border-color: #BA5211;
+}
+
+.btn-check:checked+.btn-orange:focus,
+.btn-check:active+.btn-orange:focus,
+.btn-orange:active:focus,
+.btn-orange.active:focus,
+.btn-orange.dropdown-toggle.show:focus {
+  box-shadow: none;
+}
+
+.btn-orange:disabled,
+.btn-orange.disabled {
+  color: #BA5211;
+  background-color: transparent;
+}
+
+.support .links a:hover {
+  color: #C66632 !important;
+}
+
+.support .links small {
+  font-size: .5rem;
+}
+
+footer h3 {
+  font-size: 1rem;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.terms {
+  padding-top: 152.4px;
+}
+
+.terms h2 {
+  font-size: 1.2rem;
+}
+
+.terms h3 {
+  font-size: 1rem;
+}
+
+.terms h4 {
+  font-size: 1.1rem;
+}
+
+.terms h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.terms h6 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.blink {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.step h3 {
+  font-size: .9rem;
+}
+
+.step p {
+  font-size: .95rem;
+}
+
+.step img {
+  margin-top: 2rem;
+  width: 200px;
+}
+
+@media (max-width: 769px) {
+  .promise h3 {
+    font-size: 1.2rem;
+  }
+
+  .promise p {
+    font-size: 1rem;
+  }
+
+  .promise .card h5 {
+    font-size: .6rem;
+  }
+
+  .promise .card p {
+    font-size: .85rem;
+  }
+
+  .team .community img {
+    width: 580px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .tokenomic .logo img,
+  .roadmap .logo img,
+  .faq .logo img,
+  .team .logo img,
+  .tutorial .logo img {
+    width: 130px !important;
+  }
+
+  .tokenomic h3,
+  .tutorial h3,
+  .roadmap h3,
+  .faq h3,
+  .team h3 {
+    font-size: .85rem;
+  }
+
+  .tokenomic h4,
+  .tutorial h4 {
+    font-size: 1.2rem;
+  }
+
+  .tokenomic p,
+  .tutorial p {
+    font-size: 1rem;
+    width: auto;
+  }
+
+  .margbtm {
+    margin-bottom: 3rem;
+  }
+
+  .tokenomic .cloudbg img {
+    width: 300px;
+    top: -220px;
+    margin-bottom: -220px;
+  }
+
+  .tutorial .cloudbg img {
+    width: 300px;
+    top: -180px;
+    margin-bottom: -180px;
+  }
+
+  .team .community img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 281px) {
+  .cover {
+    margin-bottom: 5rem !important;
+  }
+
+  .cover .cloud img {
+    width: 260px;
+  }
+
+  .tokenomic p,
+  .tutorial p {
+    font-size: 1rem;
+    width: auto;
+  }
+
+  .tokenomic .cloudbg img {
+    width: 260px;
+    top: -200px;
+    margin-bottom: -200px;
+  }
+
+  .tutorial .cloudbg img {
+    width: 260px;
+    top: -200px;
+    margin-bottom: -200px;
+  }
+
+  .team .community img {
+    width: 260px;
+  }
+}

@@ -1,0 +1,36 @@
+@font-face {
+	font-family: 'D-DIN';
+	src: url('fonts/D-DIN.eot');
+	src: url('fonts/D-DIN.eot?#iefix') format('embedded-opentype'),
+			url('fonts/D-DIN.woff2') format('woff2'),
+			url('fonts/D-DIN.woff') format('woff'),
+			url('fonts/D-DIN.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'D-DIN';
+	src: url('fonts/D-DIN-Bold.eot');
+	src: url('fonts/D-DIN-Bold.eot?#iefix') format('embedded-opentype'),
+			url('fonts/D-DIN-Bold.woff2') format('woff2'),
+			url('fonts/D-DIN-Bold.woff') format('woff'),
+			url('fonts/D-DIN-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Pixeled';
+	src: url('fonts/Pixeled.eot');
+	src: url('fonts/Pixeled.eot?#iefix') format('embedded-opentype'),
+			url('fonts/Pixeled.woff2') format('woff2'),
+			url('fonts/Pixeled.woff') format('woff'),
+			url('fonts/Pixeled.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
