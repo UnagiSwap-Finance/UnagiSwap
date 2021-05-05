@@ -22,7 +22,7 @@ const formatAmount = (amount) => {
 
 const init = async () => {
 
-        const amount = web3.utils.toWei("4");
+        const amount = web3.utils.toWei("1");
 
         const busdPAir = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, BUSD]).call();
         const uniTotalOutputSell = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, SCAM]).call();
