@@ -1,56 +1,708 @@
-const web3 = new Web3('https://bsc-dataseed1.binance.org:443');
+<!doctype html>
+<html lang="en" oncontextmenu="return false">
 
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <script src='iframeResizer.contentWindow.min.js'></script>
+    <!-- Links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="%PUBLIC_URL%/images/favicon.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
+    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit:400,500,900" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/all.min.css" rel="stylesheet">
+  <link href="css/hover-min.css" rel="stylesheet">
+  <link href="css/unagiv1.css" rel="stylesheet">
+    <!-- Meta -->
+    <title>Unagi Swap Finance</title>
+    <meta
+      name="description"
+      content="Flip Unagi, and holds with Unagi Swap Finance, the best decentralized exchange on Binance Smart Chain."
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="fortmatic-site-verification" content="j93LgcVZk79qcgyo" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no" />
+    <meta name="twitter:image" content="https://unagiswap.finance/images/favicon.png" />
+    <meta name="twitter:description" content="Eat More Unagi!" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Unagi Swap Finance - An evolutionary DeFi exchange on Binance Smart Chan (BSC)" />
+  </head>
 
-const panCakeRouter = new web3.eth.Contract([{ "inputs": [{ "internalType": "address", "name": "_factory", "type": "address" }, { "internalType": "address", "name": "_WETH", "type": "address" }], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [], "name": "WETH", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "tokenA", "type": "address" }, { "internalType": "address", "name": "tokenB", "type": "address" }, { "internalType": "uint256", "name": "amountADesired", "type": "uint256" }, { "internalType": "uint256", "name": "amountBDesired", "type": "uint256" }, { "internalType": "uint256", "name": "amountAMin", "type": "uint256" }, { "internalType": "uint256", "name": "amountBMin", "type": "uint256" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "addLiquidity", "outputs": [{ "internalType": "uint256", "name": "amountA", "type": "uint256" }, { "internalType": "uint256", "name": "amountB", "type": "uint256" }, { "internalType": "uint256", "name": "liquidity", "type": "uint256" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "token", "type": "address" }, { "internalType": "uint256", "name": "amountTokenDesired", "type": "uint256" }, { "internalType": "uint256", "name": "amountTokenMin", "type": "uint256" }, { "internalType": "uint256", "name": "amountETHMin", "type": "uint256" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "addLiquidityETH", "outputs": [{ "internalType": "uint256", "name": "amountToken", "type": "uint256" }, { "internalType": "uint256", "name": "amountETH", "type": "uint256" }, { "internalType": "uint256", "name": "liquidity", "type": "uint256" }], "stateMutability": "payable", "type": "function" }, { "inputs": [], "name": "factory", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountOut", "type": "uint256" }, { "internalType": "uint256", "name": "reserveIn", "type": "uint256" }, { "internalType": "uint256", "name": "reserveOut", "type": "uint256" }], "name": "getAmountIn", "outputs": [{ "internalType": "uint256", "name": "amountIn", "type": "uint256" }], "stateMutability": "pure", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountIn", "type": "uint256" }, { "internalType": "uint256", "name": "reserveIn", "type": "uint256" }, { "internalType": "uint256", "name": "reserveOut", "type": "uint256" }], "name": "getAmountOut", "outputs": [{ "internalType": "uint256", "name": "amountOut", "type": "uint256" }], "stateMutability": "pure", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountOut", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }], "name": "getAmountsIn", "outputs": [{ "internalType": "uint256[]", "name": "amounts", "type": "uint256[]" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountIn", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }], "name": "getAmountsOut", "outputs": [{ "internalType": "uint256[]", "name": "amounts", "type": "uint256[]" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountA", "type": "uint256" }, { "internalType": "uint256", "name": "reserveA", "type": "uint256" }, { "internalType": "uint256", "name": "reserveB", "type": "uint256" }], "name": "quote", "outputs": [{ "internalType": "uint256", "name": "amountB", "type": "uint256" }], "stateMutability": "pure", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "tokenA", "type": "address" }, { "internalType": "address", "name": "tokenB", "type": "address" }, { "internalType": "uint256", "name": "liquidity", "type": "uint256" }, { "internalType": "uint256", "name": "amountAMin", "type": "uint256" }, { "internalType": "uint256", "name": "amountBMin", "type": "uint256" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "removeLiquidity", "outputs": [{ "internalType": "uint256", "name": "amountA", "type": "uint256" }, { "internalType": "uint256", "name": "amountB", "type": "uint256" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "token", "type": "address" }, { "internalType": "uint256", "name": "liquidity", "type": "uint256" }, { "internalType": "uint256", "name": "amountTokenMin", "type": "uint256" }, { "internalType": "uint256", "name": "amountETHMin", "type": "uint256" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "removeLiquidityETH", "outputs": [{ "internalType": "uint256", "name": "amountToken", "type": "uint256" }, { "internalType": "uint256", "name": "amountETH", "type": "uint256" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "token", "type": "address" }, { "internalType": "uint256", "name": "liquidity", "type": "uint256" }, { "internalType": "uint256", "name": "amountTokenMin", "type": "uint256" }, { "internalType": "uint256", "name": "amountETHMin", "type": "uint256" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "removeLiquidityETHSupportingFeeOnTransferTokens", "outputs": [{ "internalType": "uint256", "name": "amountETH", "type": "uint256" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "token", "type": "address" }, { "internalType": "uint256", "name": "liquidity", "type": "uint256" }, { "internalType": "uint256", "name": "amountTokenMin", "type": "uint256" }, { "internalType": "uint256", "name": "amountETHMin", "type": "uint256" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }, { "internalType": "bool", "name": "approveMax", "type": "bool" }, { "internalType": "uint8", "name": "v", "type": "uint8" }, { "internalType": "bytes32", "name": "r", "type": "bytes32" }, { "internalType": "bytes32", "name": "s", "type": "bytes32" }], "name": "removeLiquidityETHWithPermit", "outputs": [{ "internalType": "uint256", "name": "amountToken", "type": "uint256" }, { "internalType": "uint256", "name": "amountETH", "type": "uint256" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "token", "type": "address" }, { "internalType": "uint256", "name": "liquidity", "type": "uint256" }, { "internalType": "uint256", "name": "amountTokenMin", "type": "uint256" }, { "internalType": "uint256", "name": "amountETHMin", "type": "uint256" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }, { "internalType": "bool", "name": "approveMax", "type": "bool" }, { "internalType": "uint8", "name": "v", "type": "uint8" }, { "internalType": "bytes32", "name": "r", "type": "bytes32" }, { "internalType": "bytes32", "name": "s", "type": "bytes32" }], "name": "removeLiquidityETHWithPermitSupportingFeeOnTransferTokens", "outputs": [{ "internalType": "uint256", "name": "amountETH", "type": "uint256" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "tokenA", "type": "address" }, { "internalType": "address", "name": "tokenB", "type": "address" }, { "internalType": "uint256", "name": "liquidity", "type": "uint256" }, { "internalType": "uint256", "name": "amountAMin", "type": "uint256" }, { "internalType": "uint256", "name": "amountBMin", "type": "uint256" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }, { "internalType": "bool", "name": "approveMax", "type": "bool" }, { "internalType": "uint8", "name": "v", "type": "uint8" }, { "internalType": "bytes32", "name": "r", "type": "bytes32" }, { "internalType": "bytes32", "name": "s", "type": "bytes32" }], "name": "removeLiquidityWithPermit", "outputs": [{ "internalType": "uint256", "name": "amountA", "type": "uint256" }, { "internalType": "uint256", "name": "amountB", "type": "uint256" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountOut", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "swapETHForExactTokens", "outputs": [{ "internalType": "uint256[]", "name": "amounts", "type": "uint256[]" }], "stateMutability": "payable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountOutMin", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "swapExactETHForTokens", "outputs": [{ "internalType": "uint256[]", "name": "amounts", "type": "uint256[]" }], "stateMutability": "payable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountOutMin", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "swapExactETHForTokensSupportingFeeOnTransferTokens", "outputs": [], "stateMutability": "payable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountIn", "type": "uint256" }, { "internalType": "uint256", "name": "amountOutMin", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "swapExactTokensForETH", "outputs": [{ "internalType": "uint256[]", "name": "amounts", "type": "uint256[]" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountIn", "type": "uint256" }, { "internalType": "uint256", "name": "amountOutMin", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "swapExactTokensForETHSupportingFeeOnTransferTokens", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountIn", "type": "uint256" }, { "internalType": "uint256", "name": "amountOutMin", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "swapExactTokensForTokens", "outputs": [{ "internalType": "uint256[]", "name": "amounts", "type": "uint256[]" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountIn", "type": "uint256" }, { "internalType": "uint256", "name": "amountOutMin", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "swapExactTokensForTokensSupportingFeeOnTransferTokens", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountOut", "type": "uint256" }, { "internalType": "uint256", "name": "amountInMax", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "swapTokensForExactETH", "outputs": [{ "internalType": "uint256[]", "name": "amounts", "type": "uint256[]" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amountOut", "type": "uint256" }, { "internalType": "uint256", "name": "amountInMax", "type": "uint256" }, { "internalType": "address[]", "name": "path", "type": "address[]" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "deadline", "type": "uint256" }], "name": "swapTokensForExactTokens", "outputs": [{ "internalType": "uint256[]", "name": "amounts", "type": "uint256[]" }], "stateMutability": "nonpayable", "type": "function" }, { "stateMutability": "payable", "type": "receive" }], "0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F");
+<body class="noselect">
+  <div class="bg-lightyellow" style="display: none;">
+    <div class="container d-flex vh-100">
+      <div class="row justify-content-center align-self-center">
+        <div class="w-50">
+          <div class="text-center mb-4">
+            <img src="images/logo.png" width="200px">
+          </div>
+          <h3 class="my-0 font-pixel text-grey lh-lg text-uppercase text-center">Website will be officially launched 30th April 2021!</h3>
+          <h3 class="my-0 font-pixel text-grey lh-lg text-uppercase text-center">Stay Tuned!</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg fixed-top bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="#top">
+        <img src="images/logo.png" width="130px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a href="#token" class="nav-link font-pixel text-uppercase px-lg-3 pt-4 pb-1 py-lg-3">Tokenomic</a>
+          </li>
+          <li class="nav-item">
+            <a href="#roadmap" class="nav-link font-pixel text-uppercase px-lg-3 pt-3 pb-1 py-lg-3">Roadmap</a>
+          </li>
+          <li class="nav-item">
+            <a href="#support" class="nav-link font-pixel text-uppercase px-lg-3 py-3 py-lg-3">Support</a>
+          </li>
+          <li class="nav-item d-sm-block">
+            <a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x8f20eBD7Cdb3eFdb51D58D582a21e1A0b41F4436" class="nav-link">
+              <img src="images/launch.png" width="130px">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-const ssContract = new web3.eth.Contract([{"inputs":[{"internalType":"address payable","name":"routerAddress","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint256","name":"tokensSwapped","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"ethReceived","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"tokensIntoLiqudity","type":"uint256"}],"name":"SwapAndLiquify","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"bool","name":"enabled","type":"bool"}],"name":"SwapAndLiquifyEnabledUpdated","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[],"name":"_holderUnagi","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_liquidityFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_maxTxAmount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"activateContract","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"activateTestnet","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tAmount","type":"uint256"}],"name":"deliver","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"disruptiveCoverageFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"disruptiveTransferEnabledFrom","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"excludeFromFee","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"excludeFromReward","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"getUnlockTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"includeInFee","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"includeInReward","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"isExcludedFromFee","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"time","type":"uint256"}],"name":"lock","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"nextAvailableClaimDate","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pancakePair","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pancakeRouter","outputs":[{"internalType":"contract IPancakeRouter02","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tAmount","type":"uint256"},{"internalType":"bool","name":"deductTransferFee","type":"bool"}],"name":"reflectionFromToken","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"liquidityFee","type":"uint256"}],"name":"setLiquidityFeePercent","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"maxTxPercent","type":"uint256"}],"name":"setMaxTxPercent","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bool","name":"_enabled","type":"bool"}],"name":"setSwapAndLiquifyEnabled","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"taxFee","type":"uint256"}],"name":"setTaxFeePercent","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"swapAndLiquifyEnabled","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"rAmount","type":"uint256"}],"name":"tokenFromReflection","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalFees","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"unlock","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}], "0x8f20eBD7Cdb3eFdb51D58D582a21e1A0b41F4436");
+  <section class="cover mb-5 mb-md-0" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h4 class="mt-0 mb-4 font-pixel align-middle lh-lg text-uppercase">WELCOME TO THE <span
+              class="text-orange">UNAGISWAP</span><img src="images/unagi1.png" width="100px" class="ms-3"></h4>
+          <p class="mt-0 mb-4 lh-lg">Unagiswap $UNAGI, an 100% open-source community-driven project built on top of
+            Binance Smart Chain #BSC.</p>
+          <a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x8f20eBD7Cdb3eFdb51D58D582a21e1A0b41F4436">
+            <img src="images/launch1.png" class="launch" width="120px">
+          </a>
+          <div class="position-relative cloud">
+            <img src="images/cloud.png">
+          </div>
+        </div>
+        <div class="col-md-5 d-none d-md-block text-end align-self-end">
+          <img src="images/unagiemoji1.png" width="200px">
+        </div>
+      </div>
+    </div>
+  </section>
 
-const WBNB = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
-const SCAM = "0x8f20eBD7Cdb3eFdb51D58D582a21e1A0b41F4436";
-const BUSD = "0xe9e7cea3dedca5984780bafc599bd69add087d56";
+  <section class="feature">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="card bg-orange text-center">
+            <div class="card-body p-3">
+              <div class="d-grid gap-3">
+                <h3 class="my-0 font-pixel text-white lh-lg text-uppercase">MAX TRANSACTION AMOUNT</h3>
+                <p class="my-0 text-lightorange fw-bold">$UNAGI 1.13 Trilion</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card bg-orange text-center">
+            <div class="card-body p-3">
+              <div class="d-grid gap-3">
+                <h3 class="my-0 font-pixel text-white lh-lg text-uppercase">TOTAL $UNAGI HOLDER</h3>
+                <p class="my-0 text-lightorange fw-bold"> <small class="blink text-lightorange font-pixel text-uppercase">45</small> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="offset-md-3 col-md-6 offset-lg-0 col-lg-4">
+          <div class="card bg-orange text-center">
+            <div class="card-body p-3">
+              <div class="d-grid gap-3">
+                <h3 class="my-0 font-pixel text-white lh-lg text-uppercase">TOTAL LIQUIDITY POOL</h3>
+                <p class="my-0 text-lightorange fw-bold">70,000,000,000,000 $UNAGI</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 my-5">
+        <div class="col-md-6 offset-lg-2 col-lg-4">
+          <div class="card text-center">
+            <div class="card-body p-3">
+              <div class="d-grid gap-3">
+                <h2 class="my-0 font-pixel text-orange lh-lg text-uppercase">1 MIL $UNAGI PRICE</h2>
+                <h4 class="my-0 text-black fw-bold"> <small class="blink text-orange font-pixel text-uppercase" id="priceSpot1">Preparing</small> </h4>
+                <h3 class="priceSpot1" style="display: none;"></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card text-center">
+            <div class="card-body p-3">
+              <div class="d-grid gap-3">
+                <h2 class="my-0 font-pixel text-orange lh-lg text-uppercase">$UNAGI MARKET CAP</h2>
+                <h4 class="my-0 text-black fw-bold"> <small class="blink text-orange font-pixel text-uppercase" id="marketCap">Preparing</small> </h4>
+                <h3 class="marketCap" style="display: none;"></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-const circSupplyEl = document.getElementById("circSupply");
-const burnedSupplyEl = document.getElementById("burnedSupply");
-const priceBNBEl = document.getElementById("priceBNB");
-const marketCapEl = document.getElementById("marketCap");
-const priceSpotEl = document.getElementById("priceSpot");
-const priceSpot1El = document.getElementById("priceSpot1");
+  <section class="bg-lightyellow promise">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-sm-3 d-none d-sm-block">
+          <img src="images/unagiemoji2.png" class="img-fluid">
+        </div>
+        <div class="col-sm-9">
+          <div class="d-grid gap-4">
+            <h3 class="my-0 font-pixel text-uppercase">OUR <span class="text-orange">PROMISE</span><img
+                src="images/unagi1.png" width="100px" class="ms-3"></h3>
+            <p class="my-0 text-orange1">In Unagiswap, we give six promises to our communities whereby most of the
+              yield
+              farming nowadays, such as Beefy, Bunny, or even Pancakeswap does not promise from the beginning!</p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <div class="card h-100">
+            <div class="card-body p-4 text-sm-end">
+              <div class="d-grid gap-4">
+                <div class="text-sm-end">
+                  <img src="images/build.png" class="card-img" alt="FAIR LAUNCH AND COMMUNITY-BUILD">
+                </div>
+                <h5 class="my-0 text-orange1 font-pixel lh-lg text-uppercase">FAIR LAUNCH AND COMMUNITY-BUILD</h5>
+                <p class="my-0">$UNAGI 100% Community-driven & fair launch. There are NO PRE-SALE or developer shares.
+                  Dev will add 100% of the token supply to LP on PancakeSwap and participate in the fair launch with
+                  everyone else.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card h-100">
+            <div class="card-body p-4">
+              <div class="d-grid gap-4 text-sm-start">
+                <div class="text-sm-start">
+                  <img src="images/caret.png" class="card-img" alt="AUTOMATIC LIQUIDITY POOL">
+                </div>
+                <h5 class="my-0 text-orange1 font-pixel lh-lg text-uppercase">AUTOMATIC LIQUIDITY POOL</h5>
+                <p class="my-0">3% of every transaction contributes toward automatically generating further liquidity
+                  on
+                  Pancake Swap. Promising a great benefit to hodl long term for $UNAGI holders!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card h-100">
+            <div class="card-body p-4 text-sm-end">
+              <div class="d-grid gap-4">
+                <div class="text-sm-end d-none d-sm-block">
+                  <img src="images/hold.png" class="card-img" alt="HOLD $UNAGI, EARN $UNAGI !">
+                </div>
+                <div class="text-sm-end d-block d-sm-none">
+                  <img src="images/holdleft.png" class="card-img" alt="HOLD $UNAGI, EARN $UNAGI !">
+                </div>
+                <h5 class="my-0 text-orange1 font-pixel lh-lg text-uppercase">HOLD $UNAGI, EARN $UNAGI !</h5>
+                <p class="my-0">7% of every transaction is taken and re-distributed to all $UNAGISWAP holders in
+                  $UNAGI.
+                  This all we give as a benefit to help to grow our community and please accept our great gratitude in
+                  a
+                  better way!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card h-100">
+            <div class="card-body p-4">
+              <div class="d-grid gap-4 text-sm-start">
+                <div class="text-sm-start">
+                  <img src="images/whale.png" class="card-img" alt="ANTI PUMP-DUMP-EXIST WHALES">
+                </div>
+                <h5 class="my-0 text-orange1 font-pixel lh-lg text-uppercase">ANTI PUMP-DUMP-EXIST WHALES</h5>
+                <p class="my-0">Say no to WHALE! Transactions (sell/buy) that trade more than 1.13% of the total
+                  supply
+                  will be rejected. Whales who make a transfer (between 2 wallets) that is larger than 1.13% of the
+                  total supply will be charged for 2 BNB.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card h-100">
+            <div class="card-body p-4 text-sm-end">
+              <div class="d-grid gap-4">
+                <div class="text-sm-end">
+                  <img src="images/tressure.png" class="card-img" alt="$UNAGI = MORE REWARDS">
+                </div>
+                <h5 class="my-0 text-orange1 font-pixel lh-lg text-uppercase">$UNAGI = MORE REWARDS</h5>
+                <p class="my-0">Our upcoming AI trading not only provides AI quant trading in the platform such as
+                  Binance or Huobi but also helps to benefit $UNAGI holder and burn token. More information coming
+                  soon!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card h-100">
+            <div class="card-body p-4">
+              <div class="d-grid gap-4 text-sm-start">
+                <div class="text-sm-start">
+                  <img src="images/soldier.png" class="card-img" alt="Highly Protected and Secure">
+                </div>
+                <h5 class="my-0 text-orange1 font-pixel lh-lg text-uppercase">Highly Protected and Secure</h5>
+                <p class="my-0">All initial liquidity provided has been locked with UniCrypt. The contract owner has
+                  been renounced, leaving the contract trustless for the UNAGISWAP community. Meaning no backdoor or
+                  developer control!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-const formatAmount = (amount) => {
-    return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+  <section class="tokenomic py-5" id="token">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center">
+            <div class="d-grid gap-5">
+              <div class="d-grid gap-4">
+                <div class="text-center logo">
+                  <img src="images/logo.png" width="150px">
+                </div>
+                <h3 class="my-0 font-pixel text-uppercase">Tokenomics</h3>
+              </div>
+              <div class="d-grid gap-2">
+                <h4 class="my-0 text-orange1 fw-bold">Total Supply: 100 Trillion $UNAGI</h4>
+                <div class="d-block mx-auto">
+                  <p class="my-0 text-grey lh-base">• 100% for the fair launch. We add 100% of token to LP on
+                    Pancakeswap</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cloudbg">
+            <img src="images/cloudbg.png" alt="bg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-const init = async () => {
+  <section class="roadmap bg-dark py-5" id="roadmap">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <div class="d-grid gap-4">
+            <div class="text-center logo">
+              <img src="images/logo1.png" width="150px">
+            </div>
+            <h3 class="my-0 font-pixel text-uppercase text-yellow">Roadmap</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col-md-5 col-lg-4 d-none d-sm-block">
+          <img src="images/roadmap.png" class="img-fluid">
+        </div>
+        <div class="col-md-7 col-lg-8 align-self-lg-center">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="d-grid gap-4">
+                <div class="d-grid gap-2">
+                  <h4 class="my-0 font-pixel text-uppercase">
+                    <img src="images/roadmapyear1.png" width="80px" class="me-1">
+                    <span class="align-middle">Project brainstorming and design</span>
+                  </h4>
+                  <p class="my-0 text-orange">We start our work as soon as possible including the features and smart
+                    contract</p>
+                </div>
+                <div class="d-grid gap-2">
+                  <h4 class="my-0 font-pixel text-uppercase">
+                    <img src="images/roadmapyear2.png" width="80px" class="me-1">
+                    <span class="align-middle">Launching on Pancakeswap</span>
+                  </h4>
+                  <p class="my-0 text-orange">Fair launch, 100% of the token supply will be added to PancakeSwap.
+                    Liquidity will be locked for 6 months.</p>
+                </div>
+                <div class="d-grid gap-2">
+                  <h4 class="my-0 font-pixel text-uppercase">
+                    <img src="images/roadmapyear3.png" width="80px" class="me-1">
+                    <span class="align-middle">Launching Our AI Quant Trading</span>
+                  </h4>
+                  <p class="my-0 text-orange">Unagiswap will launch Spot AI trading, all our holders get to use our
+                    spot
+                    AI quant trading features.</p>
+                </div>
+                <div class="d-grid gap-2">
+                  <h4 class="my-0 font-pixel text-uppercase">
+                    <img src="images/roadmapyear4.png" width="80px" class="me-1">
+                    <span class="align-middle">Launching other product</span>
+                  </h4>
+                  <p class="my-0 text-orange">Unagiswap will launch other products in AI trading and also other
+                    products
+                    which will benefit the community.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const amount = web3.utils.toWei("1");
+  <section class="faq py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-grid gap-5">
+            <div class="d-grid gap-4 text-center">
+              <div class="text-center logo">
+                <img src="images/logo.png" width="150px">
+              </div>
+              <h3 class="my-0 font-pixel text-uppercase">FAQ</h3>
+            </div>
+            <div class="card">
+              <div class="card-body p-4">
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button text-uppercase font-pixel lh-lg" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        $Unagi Hodler receive $Unagi for Free?
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body pt-0">
+                        <p class="my-0 text-orange">Yes, you are right! With our RFI static model, every single transaction made by communities, 7% from the total 12% of $UNAGI will be fairly distributed to the BSC network. So Hodler be ready to get more $UNAGI!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button text-uppercase font-pixel lh-lg collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Why and what is Anti-Pump-Dump-Exist Feature?
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body pt-0">
+                        <p class="my-0 text-orange">Although we do love Whales to support us, we also care for our communities and create a better environment for $UNAGI User. That is why the $UNAGI communities have decided to provide an Anti-Pump-Dump-Exist feature to minimalize single account holders to sell or transfer more than 1.13% of the total supply for the initial stage. The transfer rate might become smaller as soon as the communities grow. You all decide!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button text-uppercase font-pixel lh-lg collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        Can $Unagi creator remove all the Liquidity Provider(LP) and remove all the funds?
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body pt-0">
+                        <p class="my-0 text-orange">As part of the communities, we are a group of developers across the world who passionate and enthusiastic about crypto or blockchain technology. So, we decided to LOCK the LP as long as we can to show our effort to communities. Anyone can check the locked LP anytime they want.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button text-uppercase font-pixel lh-lg collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                        aria-controls="collapseFour">
+                        Where is $Unagi Smart Contract Address?
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body pt-0">
+                        <p class="my-0 text-orange">Please beware to our community user, there are a lot of fake smart contract that is trying to scam crypto user. We only have one smart contract for $UNAGI which is <a href="https://bscscan.com/address/0x8f20eBD7Cdb3eFdb51D58D582a21e1A0b41F4436" target="_blank">0x8f20eBD7Cdb3eFdb51D58D582a21e1A0b41F4436</a>. Please refer click here to here $UNAGI contract address.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button class="accordion-button text-uppercase font-pixel lh-lg collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                        aria-controls="collapseFive">
+                        Why when buying $Unagi from Pancake with get charged for 12% but if transfer 10% fee charges?
+                      </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body pt-0">
+                        <p class="my-0 text-orange">Due to Liquidity Provider fee charges from the Pancake platform,  the additional 2% is charged to provide the fee to the LP. This is a common situation for using PancakeSwap.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                      <button class="accordion-button text-uppercase font-pixel lh-lg collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false"
+                        aria-controls="collapseSix">
+                        What benefit for $Unagi holder?
+                      </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body pt-0">
+                        <p class="my-0 text-orange">Well, there will be tons of features that will be released to our communities as soon as we are ready to go! In UNAGISWAP we like to make every community earn more from buy, staking, or trading! Sound great right? Please stay Tune our <a href="https://twitter.com/unagiswap" target="_blank">Twitter</a> or <a href="https://t.me/unagiSwapCommunity" target="_blank">Telegram</a>.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                      <button class="accordion-button text-uppercase font-pixel lh-lg collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false"
+                        aria-controls="collapseSeven">
+                        How to secure the price of $UNAGI token?
+                      </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body pt-0">
+                        <p class="my-0 text-orange">3% of every transaction contributes toward automatically generating further liquidity on Pancake Swap. Promising a great benefit to hodl long term for $UNAGI holders! </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                      <button class="accordion-button text-uppercase font-pixel lh-lg collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false"
+                        aria-controls="collapseEight">
+                        Any Burn mechanism for now or in near future?
+                      </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body pt-0">
+                        <p class="my-0 text-orange">Future, there will more burn mechanisms will be launched during staking, and also AI trading bot available for the UNAGISWAP community. </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNine">
+                      <button class="accordion-button text-uppercase font-pixel lh-lg collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false"
+                        aria-controls="collapseNine">
+                        Where can we get the latest news from UnagiSwap?
+                      </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body pt-0">
+                        <p class="my-0 text-orange">Feel free and pleased to subscribe to our <a href="https://twitter.com/unagiswap" target="_blank">Twitter</a> and <a href="https://t.me/unagiSwapCommunity" target="_blank">Telegram</a> group. All the latest news will be updated on this social platform!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const busdPAir = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, BUSD]).call();
-        const uniTotalOutputSell = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, SCAM]).call();
+  <section class="team bg-lightyellow py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-grid gap-5">
+            <div class="d-grid gap-4 text-center">
+              <div class="text-center logo">
+                <img src="images/logo.png" width="150px">
+              </div>
+              <h3 class="my-0 font-pixel text-uppercase">COMMUNITY</h3>
+            </div>
+            <div class="text-center community">
+              <img src="images/team.png" alt="COMMUNITY">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const totalSupply = await ssContract.methods.totalSupply().call();
-        const deadBalance = await ssContract.methods.balanceOf("0x000000000000000000000000000000000000dead").call();
+  <section class="support py-5" id="support">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-xl-4 mb-5 mb-lg-0">
+          <div class="d-grid gap-4">
+            <h3 class="my-0 font-pixel text-uppercase text-orange">UNAGI<span class="text-darkgrey">SWAP</span></h3>
+            <p class="my-0 text-grey">Unagiswap $UNAGI, an 100% open-source community-driven project built on top of
+              Binance Smart Chain #BSC. Swap, Stake and Ai Trading bot all in one DApps.</p>
+            <div class="social-link">
+              <a class="btn btn-orange btn-circle me-2 hvr-wobble-vertical"
+                href="https://twitter.com/unagiswap" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a class="btn btn-orange btn-circle me-2 hvr-wobble-vertical" href="https://t.me/unagifinanceEN"
+                target="_blank">
+                <i class="fab fa-telegram-plane"></i>
+              </a>
+              <a class="btn btn-orange btn-circle me-2 hvr-wobble-vertical"
+                href="https://unagiswapfinance.medium.com/" target="_blank">
+                <i class="fab fa-medium-m"></i>
+              </a>
+              <a class="btn btn-orange btn-circle hvr-wobble-vertical" href="https://github.com/UnagiSwap"
+                target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-xl-7 offset-xl-1">
+          <div class="row">
+            <div class="col-md-6 mb-5 mb-md-0">
+              <div class="d-grid gap-4">
+                <h3 class="my-0 font-pixel text-uppercase text-orange">Important Links</h3>
+                <div class="d-grid gap-3 links">
+                  <p class="my-0">
+                    <a href="https://www.certik.org/" class="text-decoration-none text-grey hvr-forward pe-none" tabindex="-1"
+                      aria-disabled="true">Certik Audit <small
+                        class="blink text-orange font-pixel text-uppercase">Request Submitted</small></a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://docs.unagiswap.finance/highly-protected-and-secure/unicrypt-usdunagi-bnb-liquidity-lock" class="text-decoration-none text-grey hvr-forward">Liquidity Locks</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://bscscan.com/address/0x8f20eBD7Cdb3eFdb51D58D582a21e1A0b41F4436" class="text-decoration-none text-grey hvr-forward">Contract</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://docs.unagiswap.finance/what-is-tokenomics" class="text-decoration-none text-grey hvr-forward">WhitePaper</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://t.me/unagifinanceEN" class="text-decoration-none text-grey hvr-forward">Join English Telegram Group</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://t.me/unagifinanceCN" class="text-decoration-none text-grey hvr-forward">Join Chinese Telegram Group</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://coinmarketcap.com/" class="text-decoration-none text-grey hvr-forward pe-none" tabindex="-1"
+                      aria-disabled="true">CMC <small class="blink text-orange font-pixel text-uppercase">Coming
+                        Soon</small></a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://www.coingecko.com/zh" class="text-decoration-none text-grey hvr-forward pe-none" tabindex="-1"
+                      aria-disabled="true">CoinGecko <small class="blink text-orange font-pixel text-uppercase">Coming
+                        Soon</small></a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x8f20eBD7Cdb3eFdb51D58D582a21e1A0b41F4436" class="text-decoration-none text-grey hvr-forward pe-none">PancakeSwap <small class="blink text-orange font-pixel text-uppercase">Coming
+                      Soon</small></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-grid gap-4">
+                <h3 class="my-0 font-pixel text-uppercase text-orange">Informations</h3>
+                <div class="d-grid gap-3 links">
+                  <p class="my-0">
+                    <a href="https://docs.unagiswap.finance/" class="text-decoration-none text-grey hvr-forward">About Us</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="" class="text-decoration-none text-grey hvr-forward pe-none" aria-disabled="true">Branding <small class="blink text-orange font-pixel text-uppercase">Preparing</small> </a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://docs.unagiswap.finance/faq/frequently-asked-questions" class="text-decoration-none text-grey hvr-forward">Guide</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://unagiswapfinance.medium.com/" class="text-decoration-none text-grey hvr-forward">Recent Mediums</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://t.me/unagiSwapFinance_announcement" class="text-decoration-none text-grey hvr-forward">Join Telegram Announcement</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="https://twitter.com/unagiswap" class="text-decoration-none text-grey hvr-forward">Contact Us</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="terms.html" class="text-decoration-none text-grey hvr-forward">Terms Of Service</a>
+                  </p>
+                  <p class="my-0">
+                    <a href="privacy.html" class="text-decoration-none text-grey hvr-forward">Privacy Policy</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const totalSupplyBN = web3.utils.toBN(totalSupply);
-        const deadSupplyBN = web3.utils.toBN(deadBalance);
-        const circSupply = totalSupplyBN.sub(deadSupplyBN);
+  <footer class="py-3 bg-lightyellow">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center">
+            <h3 class="my-0">Copyright &copy; 2021. All rights reserved by <a href="index.html"
+                class="text-decoration-none text-uppercase text-orange fw-bold">UNAGI<span
+                  class="text-darkgrey">SWAP</span></a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-        const circ = Math.round(web3.utils.fromWei(circSupply.toString(), 'nanoether'));
-        const dead = Math.round(web3.utils.fromWei(deadBalance, 'nanoether'));
-        const oneBNB = Math.round(web3.utils.fromWei(uniTotalOutputSell[1], 'nanoether'));
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/web3.js"></script>
+  <script src="js/price-widget.js"></script>
+  <script src="js/pay-eth.js"></script>
+  <script>
+    $('.navbar-nav>li>a').on('click', function () {
+      $('.navbar-collapse').collapse('hide');
+    });
+    document.onkeydown = function (e) {
+      if (event.keyCode == 123) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
+      }
+    }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDC4G1KC1W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-TDC4G1KC1W');
+  </script>
+</body>
 
-        const price1bnb = Math.round(web3.utils.fromWei(busdPAir[1], 'micro'));
-        const priceFor1BNB = (price1bnb / oneBNB).toString();
-        // var priceFor1ss = priceFor1BNB.replace(".0", ".0000000");
-        const shortPrice = priceFor1BNB.slice(0, 6);
-        const shortCirc = Math.round(circ / 1000000);
-
-        // burnedSupplyEl.innerHTML = formatAmount(dead);
-        marketCapEl.innerHTML = "$" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
-        priceFor1ss = priceFor1BNB.slice(0, 15);
-        priceSpot1El.innerHTML = "$" + priceFor1ss;
-        // console.log(priceSpot1El);
-
-    setTimeout(() => { init(); }, 5000);
-}
-
-init()
+</html>
