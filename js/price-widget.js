@@ -48,7 +48,7 @@ const init = async () => {
         marketCapEl.innerHTML = "$" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
         priceFor1ss = priceFor1ss.slice(0, 15);
         priceSpot1El.innerHTML = "$" + priceFor1ss;
-        console.log(priceSpot1El);
+
 
     setTimeout(() => { init(); }, 5000);
 }
