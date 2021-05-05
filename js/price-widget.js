@@ -46,7 +46,7 @@ const init = async () => {
 
         // burnedSupplyEl.innerHTML = formatAmount(dead);
         marketCapEl.innerHTML = "$" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
-        priceFor1ss = priceFor1ss.slice(0, 15);
+        priceFor1ss = priceFor1BNB.slice(0, 15);
         priceSpot1El.innerHTML = "$" + priceFor1ss;
         // console.log(priceSpot1El);
 
