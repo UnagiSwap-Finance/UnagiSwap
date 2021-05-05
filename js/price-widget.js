@@ -42,7 +42,7 @@ const init = async () => {
         console.log(priceFor1BNB,price1bnb,oneBNB,uniTotalOutputSell[1],dead);
         // var priceFor1ss = priceFor1BNB.replace(".0", ".0000000");
         const shortPrice = priceFor1BNB.slice(0, 6);
-        const shortCirc = Math.round(circ / 1000000000);
+        const shortCirc = Math.round(circ / 1000000);
 
         // burnedSupplyEl.innerHTML = formatAmount(dead);
         marketCapEl.innerHTML = "approx. $" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
