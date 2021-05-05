@@ -26,7 +26,7 @@ const init = async () => {
 
     const busdPAir = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, BUSD]).call();
     const uniTotalOutputSell = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, UNAGI]).call();
-
+    console.log(uniTotalOutputSell);
     const totalSupply = await ssContract.methods.totalSupply().call();
     const deadBalance = await ssContract.methods.balanceOf("0x000000000000000000000000000000000000dead").call();
 
