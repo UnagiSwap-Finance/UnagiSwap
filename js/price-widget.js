@@ -37,7 +37,7 @@ const init = async () => {
     const dead = Math.round(web3.utils.fromWei(deadBalance, 'nanoether'));
     // const oneBNB = Math.round(web3.utils.fromWei(uniTotalOutputSell[1], 'nanoether'));
     const oneBNB = uniTotalOutputSell[1];
-    console.log(circ);
+    console.log(busdPAir);
 
     // const price1bnb = Math.round(web3.utils.fromWei(busdPAir[1], 'micro'));
     const price1bnb = busdPAir[1];
