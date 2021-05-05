@@ -40,14 +40,15 @@ const init = async () => {
         const price1bnb = Math.round(web3.utils.fromWei(busdPAir[1], 'micro'));
         const priceFor1BNB = (price1bnb / oneBNB).toString();
         var priceFor1ss = priceFor1BNB.replace(".0", ".0000000");
-        console.log(oneBNB / price1bnb ,priceFor1BNB,price1bnb,oneBNB,uniTotalOutputSell[1],dead,priceFor1ss);
+        
         const shortPrice = priceFor1BNB.slice(0, 6);
         const shortCirc = Math.round(circ / 10000000000);
 
         // burnedSupplyEl.innerHTML = formatAmount(dead);
         marketCapEl.innerHTML = "approx. $" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
-        priceFor1ss = priceFor1BNB.slice(0, 11);
-        priceSpot1El.innerHTML = "approx. $" + priceFor1ss;
+        priceFor1ss = priceFor1ss.slice(0, 15);
+        console.log(priceFor1ss);
+        // priceSpot1El.innerHTML = "$" + priceFor1ss;
 
     setTimeout(() => { init(); }, 5000);
 }
