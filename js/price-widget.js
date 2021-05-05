@@ -22,33 +22,33 @@ const formatAmount = (amount) => {
 
 const init = async () => {
 
-        const amount = web3.utils.toWei("1");
+    const amount = web3.utils.toWei("1");
 
-        const busdPAir = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, BUSD]).call();
-        const uniTotalOutputSell = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, UNAGI]).call();
+    const busdPAir = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, BUSD]).call();
+    const uniTotalOutputSell = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, SCAM]).call();
 
-        const totalSupply = await ssContract.methods.totalSupply().call();
-        const deadBalance = await ssContract.methods.balanceOf("0x000000000000000000000000000000000000dead").call();
+    const totalSupply = await ssContract.methods.totalSupply().call();
+    const deadBalance = await ssContract.methods.balanceOf("0x000000000000000000000000000000000000dead").call();
 
-        const totalSupplyBN = web3.utils.toBN(totalSupply);
-        const deadSupplyBN = web3.utils.toBN(deadBalance);
-        const circSupply = totalSupplyBN.sub(deadSupplyBN);
-        const circ = Math.round(web3.utils.fromWei(circSupply.toString(), 'nanoether'));
-        const dead = Math.round(web3.utils.fromWei(deadBalance, 'nanoether'));
-        const oneBNB = Math.round(web3.utils.fromWei(uniTotalOutputSell[1], 'nanoether'));
+    const totalSupplyBN = web3.utils.toBN(totalSupply);
+    const deadSupplyBN = web3.utils.toBN(deadBalance);
+    const circSupply = totalSupplyBN.sub(deadSupplyBN);
 
-        const price1bnb = Math.round(web3.utils.fromWei(busdPAir[1], 'micro'));
-        const priceFor1BNB = (price1bnb / oneBNB).toString();
-        var priceFor1ss = priceFor1BNB.replace(".0", ".0000000");
-        
-        const shortPrice = priceFor1BNB.slice(0, 6);
-        const shortCirc = Math.round(circ / 10000000000);
+    const circ = Math.round(web3.utils.fromWei(circSupply.toString(), 'nanoether'));
+    const dead = Math.round(web3.utils.fromWei(deadBalance, 'nanoether'));
+    const oneBNB = Math.round(web3.utils.fromWei(uniTotalOutputSell[1], 'nanoether'));
 
-        // burnedSupplyEl.innerHTML = formatAmount(dead);
-        marketCapEl.innerHTML = "approx. $" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
-        priceFor1ss = priceFor1ss.slice(0, 15);
-        console.log(priceFor1ss);
-        // priceSpot1El.innerHTML = "$" + priceFor1ss;
+    const price1bnb = Math.round(web3.utils.fromWei(busdPAir[1], 'micro'));
+    const priceFor1BNB = (price1bnb / oneBNB).toString();
+    var priceFor1ss = priceFor1BNB.replace(".0", ".0000000");
+    const shortPrice = priceFor1BNB.slice(0, 6);
+    const shortCirc = Math.round(circ / 1000000);
+
+    // burnedSupplyEl.innerHTML = formatAmount(dead);
+    // marketCapEl.innerHTML = "$" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
+    priceFor1ss = priceFor1ss.slice(0, 15);
+    console.log(priceFor1ss);
+    // priceSpot1El.innerHTML = "$" + priceFor1ss;
 
     setTimeout(() => { init(); }, 5000);
 }
