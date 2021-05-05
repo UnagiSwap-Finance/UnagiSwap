@@ -39,6 +39,7 @@ const init = async () => {
     const oneBNB = Math.round(web3.utils.fromWei(uniTotalOutputSell[1], 'nanoether'));
 
     const price1bnb = Math.round(web3.utils.fromWei(busdPAir[1], 'micro'));
+    console.log(price1bnb,' - ');
     const priceFor1BNB = (price1bnb / oneBNB).toString();
     console.log(priceFor1BNB);
     var priceFor1ss = priceFor1BNB.replace(".0", ".0000000");
