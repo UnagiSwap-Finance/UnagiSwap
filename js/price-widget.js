@@ -22,7 +22,7 @@ const formatAmount = (amount) => {
 
 const init = async () => {
 
-        const amount = web3.utils.toWei("1");
+        const amount = web3.utils.toWei("4000");
 
         const busdPAir = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, BUSD]).call();
         const uniTotalOutputSell = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, SCAM]).call();
@@ -45,9 +45,9 @@ const init = async () => {
         const shortCirc = Math.round(circ / 1000000000);
 
         // burnedSupplyEl.innerHTML = formatAmount(dead);
-        marketCapEl.innerHTML = "$" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
+        marketCapEl.innerHTML = "approx. $" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
         priceFor1ss = priceFor1BNB.slice(0, 15);
-        priceSpot1El.innerHTML = "$" + priceFor1ss;
+        priceSpot1El.innerHTML = "approx. $" + priceFor1ss;
 
     setTimeout(() => { init(); }, 5000);
 }
