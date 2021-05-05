@@ -45,7 +45,7 @@ const init = async () => {
         const shortCirc = Math.round(circ / 1000000000);
 
         // burnedSupplyEl.innerHTML = formatAmount(dead);
-        marketCapEl.innerHTML = "approx. $" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
+        marketCapEl.innerHTML = "approx. $" + (formatAmount(Math.round(shortCirc * (shortPrice - 0)))).toFixed(9);
         priceFor1ss = priceFor1BNB.slice(0, 15);
         priceSpot1El.innerHTML = "approx. $" + priceFor1ss;
 
