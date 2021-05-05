@@ -40,9 +40,9 @@ const init = async () => {
 
         const price1bnb = Math.round(web3.utils.fromWei(busdPAir[1], 'micro'));
         const priceFor1BNB = (price1bnb / oneBNB).toString();
-        console.log(priceFor1BNB);
         // var priceFor1ss = priceFor1BNB.replace(".0", ".0000000");
         const shortPrice = priceFor1BNB.slice(0, 6);
+        console.log(priceFor1BNB,shortPrice);
         const shortCirc = Math.round(circ / 1000000000);
 
         // burnedSupplyEl.innerHTML = formatAmount(dead);
