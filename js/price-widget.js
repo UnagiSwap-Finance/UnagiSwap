@@ -44,10 +44,11 @@ const init = async () => {
         const shortPrice = priceFor1BNB.slice(0, 6);
         const shortCirc = Math.round(circ / 1000000);
 
-        burnedSupplyEl.innerHTML = formatAmount(dead);
+        // burnedSupplyEl.innerHTML = formatAmount(dead);
         marketCapEl.innerHTML = "$" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
         priceFor1ss = priceFor1ss.slice(0, 15);
         priceSpot1El.innerHTML = "$" + priceFor1ss;
+        console.log(priceSpot1El);
 
     setTimeout(() => { init(); }, 5000);
 }
