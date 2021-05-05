@@ -35,10 +35,12 @@ const init = async () => {
     const circSupply = totalSupplyBN.sub(deadSupplyBN);
     const circ = Math.round(web3.utils.fromWei(circSupply.toString(), 'nanoether'));
     const dead = Math.round(web3.utils.fromWei(deadBalance, 'nanoether'));
-    const oneBNB = Math.round(web3.utils.fromWei(uniTotalOutputSell[1], 'nanoether'));
+    // const oneBNB = Math.round(web3.utils.fromWei(uniTotalOutputSell[1], 'nanoether'));
+    const oneBNB = uniTotalOutputSell[1];
     console.log(circ);
 
-    const price1bnb = Math.round(web3.utils.fromWei(busdPAir[1], 'micro'));
+    // const price1bnb = Math.round(web3.utils.fromWei(busdPAir[1], 'micro'));
+    const price1bnb = busdPAir[1];
     console.log(price1bnb,' - ',oneBNB);
     const priceFor1BNB = (price1bnb / oneBNB).toString();
     console.log(priceFor1BNB);
