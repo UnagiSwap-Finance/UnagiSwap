@@ -17,6 +17,7 @@ const priceSpotEl = document.getElementById("priceSpot");
 const priceSpot1El = document.getElementById("priceSpot1");
 
 const formatAmount = (amount) => {
+    amount = amount.toFixed(9);
     return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
@@ -45,7 +46,7 @@ const init = async () => {
         const shortCirc = Math.round(circ / 1000000000);
 
         // burnedSupplyEl.innerHTML = formatAmount(dead);
-        marketCapEl.innerHTML = "approx. $" + parseFloat(formatAmount(Math.round(shortCirc * (shortPrice - 0)))).toFixed(9);
+        marketCapEl.innerHTML = "approx. $" + formatAmount(Math.round(shortCirc * (shortPrice - 0)));
         priceFor1ss = priceFor1BNB.slice(0, 15);
         priceSpot1El.innerHTML = "approx. $" + priceFor1ss;
 
