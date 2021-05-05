@@ -25,7 +25,7 @@ const init = async () => {
     const amount = web3.utils.toWei("1");
 
     const busdPAir = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, BUSD]).call();
-    const uniTotalOutputSell = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, SCAM]).call();
+    const uniTotalOutputSell = await panCakeRouter.methods.getAmountsOut(amount, [WBNB, UNAGI]).call();
 
     const totalSupply = await ssContract.methods.totalSupply().call();
     const deadBalance = await ssContract.methods.balanceOf("0x000000000000000000000000000000000000dead").call();
