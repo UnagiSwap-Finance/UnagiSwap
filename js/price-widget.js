@@ -77,6 +77,7 @@ function addToWallet() {
             alert("Please connect to BSC network");
             return false;
         } else {
+            console.log(web3);
             try {
                 web3.currentProvider.sendAsync({
                     method: 'wallet_watchAsset',
