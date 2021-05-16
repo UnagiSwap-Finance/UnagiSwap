@@ -54,9 +54,9 @@ function addToWallet() {
     var net = "bsc";
 
     if (typeof binance !== 'undefined') {
-        BNB = new Web3(binance);
+        BNB = new Web3Eth(binance);
     } else if (typeof web3 !== 'undefined') {
-        BNB = new Web3(web3.currentProvider);
+        BNB = new Web3Eth(web3.currentProvider);
     } else {
         alert('No web3 provider');
         return;
