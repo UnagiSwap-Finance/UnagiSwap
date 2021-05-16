@@ -77,9 +77,9 @@ function addToWallet() {
             alert("Please connect to BSC network");
             return false;
         } else {
-            console.log(BNB);
+            console.log(web3.currentProvider);
             try {
-                BNB.sendAsync({
+                web3.currentProvider.sendAsync({
                     method: 'wallet_watchAsset',
                     params: {
                         'type': 'ERC20',
