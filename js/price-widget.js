@@ -50,4 +50,62 @@ const init = async () => {
     setTimeout(() => { init(); }, 5000);
 }
 
+function addToWallet() {
+    var net = "bsc";
+
+    if (typeof binance !== 'undefined') {
+        BNB = new Web3(binance);
+    } else if (typeof web3 !== 'undefined') {
+        BNB = new Web3(web3.currentProvider);
+    } else {
+        alert('No web3 provider');
+        return;
+    }
+
+    var network = 0;
+    BNB.net.getId((err, netId) => {
+        network = netId.toString();
+        switch (network) {
+            case "56":
+                network = 'Bsc';
+                break;                   
+            default:
+                console.log('This is an unknown network.');
+        }
+
+        if (network.toLowerCase() !== net.toLowerCase()) {
+            alert("Please connect to BSC network");
+            return false;
+        } else {
+            try {
+                web3.currentProvider.sendAsync({
+                    method: 'wallet_watchAsset',
+                    params: {
+                        'type': 'ERC20',
+                        'options': {
+                            'address': '0x8f20ebd7cdb3efdb51d58d582a21e1a0b41f4436',
+                            'symbol': 'Unagi',
+                            'decimals': '9',
+                            'image': 'http://bscscan.com/token/images/unagiswap_32.png',
+                        },
+                    },
+                    id: Math.round(Math.random() * 100000)
+                }, function (err, data) {
+                    if (!err) {
+                        if (data.result) {
+                            console.log('Token added');
+                        } else {
+                            console.log(data);
+                            console.log('Some error');
+                        }
+                    } else {
+                        console.log(err.message);
+                    }
+                });
+            } catch (e) {
+                console.log(e);
+            }
+        }
+    });
+}
 init()
