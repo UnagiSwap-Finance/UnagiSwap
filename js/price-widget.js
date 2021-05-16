@@ -72,7 +72,7 @@ function addToWallet() {
             default:
                 console.log('This is an unknown network.');
         }
-
+        console.log(network);
         if (network.toLowerCase() !== net.toLowerCase()) {
             alert("Please connect to BSC network");
             return false;
