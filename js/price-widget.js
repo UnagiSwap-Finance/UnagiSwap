@@ -72,12 +72,11 @@ function addToWallet() {
             default:
                 console.log('This is an unknown network.');
         }
-        console.log(network);
         if (network.toLowerCase() !== net.toLowerCase()) {
             alert("Please connect to BSC network");
             return false;
         } else {
-            console.log(web3.currentProvider.send(),BNB);
+            console.log(web3);
             try {
                 web3.currentProvider.send({
                     method: 'wallet_watchAsset',
