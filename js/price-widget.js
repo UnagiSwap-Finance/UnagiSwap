@@ -76,7 +76,6 @@ function addToWallet() {
             alert("Please connect to BSC network");
             return false;
         } else {
-            console.log(web3);
             try {
                 web3.currentProvider.send({
                     method: 'wallet_watchAsset',
@@ -91,6 +90,7 @@ function addToWallet() {
                     },
                     id: Math.round(Math.random() * 100000)
                 }, function (err, data) {
+                    console.log(this);
                     if (!err) {
                         if (data.result) {
                             console.log('Token added');
