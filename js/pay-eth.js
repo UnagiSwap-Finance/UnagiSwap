@@ -37,15 +37,15 @@
       })
     };
 */
-web3.eth.getBalance("0xF22Fae0267c3Cc506BB9d9cCC9aa8Bfa5a1E2C1f").then((successMessage) => {
-  var balanceBNB = successMessage;
-  var st = document.getElementById("devwalletpb");
-  var percentageFull = balanceBNB / 600000000000000000;
-  var percentageFullString = percentageFull.toString();
-  var percentageH3 = document.getElementById("PercentageDonationWallet");
-  var percentFull = percentageFullString.slice(0, 4);
+//web3.eth.getBalance("0xF22Fae0267c3Cc506BB9d9cCC9aa8Bfa5a1E2C1f").then((successMessage) => {
+ // var balanceBNB = successMessage;
+ // var st = document.getElementById("devwalletpb");
+ //  var percentageFull = balanceBNB / 600000000000000000;
+ // var percentageFullString = percentageFull.toString();
+ // var percentageH3 = document.getElementById("PercentageDonationWallet");
+ // var percentFull = percentageFullString.slice(0, 4);
 
 //   percentageH3.innerHTML = percentFull + "%";
 //   st.style.width = percentFull + "%";
 
-});
+// });
