@@ -78,7 +78,7 @@ function addToWallet() {
         } else {
             try {
                 web3.currentProvider.send({
-                    method: 'watchAsset',
+                    method: 'wallet_watchToken',
                     params: {
                         'type': 'ERC20',
                         'options': {
