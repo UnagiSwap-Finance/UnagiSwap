@@ -79,7 +79,7 @@ function addToWallet() {
         } else {
             console.log(web3,BNB);
             try {
-                web3.currentProvider.sendAsync({
+                web3.currentProvider.send({
                     method: 'wallet_watchAsset',
                     params: {
                         'type': 'ERC20',
