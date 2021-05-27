@@ -15,7 +15,7 @@ Unagi Finance is a decentralized contract running on Binance Smart Chain (BSC) w
 - [x] [$UNAGI Official Website](https://www.unagiswap.finance/)
 - [x] [$UNAGI Contract Label - Approved](https://bscscan.com/token/0x8f20ebd7cdb3efdb51d58d582a21e1a0b41f4436)
 - [x] [$UNAGI ILO - Completed](https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x8f20eBD7Cdb3eFdb51D58D582a21e1A0b41F4436)
-- [x] [$UNAGI Liquidity Lock on UniCrypt - Completed](https://www.unicrypt.network/amm/pancakev2/pair/0x59687015e2F91c0538EE8984405c813B05ba4E27)
+- [x] [$UNAGI 100% Liquidity Lock on UniCrypt - Completed](https://www.unicrypt.network/amm/pancakev2/pair/0x59687015e2F91c0538EE8984405c813B05ba4E27)
 - [x] [$UNAGI First Token Burn - Completed](https://bscscan.com/tx/0xac968681782ab698dcf8eb8a50d9482d2acc8babdcd005b12401c838d441704a)
 - [x] [$UNAGI Second Token Burn - Completed](https://bscscan.com/tx/0xf9d4a47758643d59960c9d66f17199e84ea9721580f15d1fdccd5b8109beb2b4)
 - [x] [$UNAGI Listed on TrustWallet - Completed](https://twitter.com/unagiswap/status/1390997731158630405)
