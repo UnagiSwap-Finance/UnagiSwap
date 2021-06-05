@@ -27,6 +27,7 @@ Unagi Finance is a decentralized contract running on Binance Smart Chain (BSC) w
 - [x] [TAMAGO AI User Guidelines - Completed](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-MZ6wZxjevrzDxOXl1yt%2F-Mb1UYJuC8h386Hoi3YD%2F-Mb1UfEHAJKOtPT4CypD%2FTamago%20Tutorial%20%E6%95%99%E7%A8%8B.pdf?alt=media&token=9b6c61fb-3b32-4e2f-acfb-b2d8f75d366a) 
 - [x] [TAMAGO AI Platform - Live](https://www.tamagoai.com/portal/index/invite?invitation_code=XJFAMq) 
 - [x] [UNAGISWAP FINANCE YouTube Channel - Live](https://www.youtube.com/channel/UCGIZ0-kmCUkZ4wUD7zKAVwg) 
+- [x] [$UNAGI Third Token Burn - Completed](https://bscscan.com/tx/0xf5fd5b88e4e65d755d4401a1f8b24546d6caf5ea7f35d6fafb457dc7e4427a63)
 - [ ] $UNAGI Certik Audit - Request in Progress
 - [ ] $UNAGI Auto-Compounding Farms - In Development
 - [ ] $UNAGI AI Quant Trading - In Development
